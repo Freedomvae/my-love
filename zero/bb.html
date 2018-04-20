@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>白羊</title>
+    <style type="text/css">
+        body{
+            background-image: url(./images/2.jpg) ;
+            background-size: 70%  140%;
+       height: 200%;
+        }
+        html{
+            height:30%;
+        }
+        @keyframes myfirst {
+           0%{opacity:100}
+            25%{opacity:0}
+           50%{opacity:0}
+           100%{opacity:0}
+        }
+        @keyframes mysecond {
+            0%{opacity:0}
+            50%{opacity:0}
+            75%{opacity:100}
+            100%{opacity:0}
+        }
+        @keyframes mythid {
+            0%{opacity:0}
+            25%{opacity:0}
+            50%{opacity:0}
+            100%{opacity:100}
+        }
+
+            p {
+            font-size: 100px;
+                position: absolute;
+            width: 100%;
+            text-align: center;
+        }
+        #you{
+            animation: myfirst 29s infinite;
+        }
+        #me{
+            animation: mysecond 10s infinite;
+        }
+        #ke{
+            animation: mythid 15s infinite;
+        }
+    </style>
+</head>
+<body>
+<audio src="wav/bny.wav"  autoplay="autoplay"  loop="loop">
+</audio>
+<p  id="you">你设计的城堡太糟糕</p>
+<p id="me"> 我一起飞就能逃跑</p>
+<p id="ke"> 可你粲然一笑</p>
+</body>
+</html>
