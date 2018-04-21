@@ -7,18 +7,15 @@
 </head>
 <body>
 <script>
-    document.addEventListener('DOMContentLoaded', function () {
-        function audioAutoPlay() {
-            var audio = document.getElementById('audio');
+        function audioAutoPlay(id) {
+            var audio = document.getElementById('id');
             audio.play();
             document.addEventListener("WeixinJSBridgeReady", function () {
-                audio.play();
+            }, false);
+            document.addEventListener("WeixinJSBridgeReady", function () {
             }, false);
         }
-        audioAutoPlay();
-    });
     </script>
-</head>
 <audio src="ts.mp3"  autoplay="autoplay"></audio>
 <page id="c">祝</page>
 <page id="x">你</page>
