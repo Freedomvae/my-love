@@ -1,41 +1,30 @@
 <!DOCTYPE html>
 <html>
 <head lang="en">
-    <head charset="UTF-8">
+    <meta charset="UTF-8">
     <title></title>
     <link rel="stylesheet" type="text/css" href="css/page.css" />
-    <script>
-        setTimeout(function(){
-            $(window).scrollTop(1);
-        },0);
-
-        /*音乐*/
-        var audio = $('#car_audio');
-        var isPlaying = false;
-        function playAudio() {
-            var audio = $('#car_audio');
-            if (audio.attr('src') == undefined) {
-                audio.attr('src', audio.data('src'));
-            }
-            audio[0].play();
-            isPlaying = true;
-        }
-        $(function(){
-            playAudio();
+</head>
+<body>
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        function audioAutoPlay() {
+            var audio = document.getElementById('audio');
+            audio.play();
             document.addEventListener("WeixinJSBridgeReady", function () {
-                WeixinJSBridge.invoke('getNetworkType', {}, function (e) {
-                    network = e.err_msg.split(":")[1];  //结果在这里
-                    playAudio();
-                });
+                audio.play();
             }, false);
-        })
+        }
+        audioAutoPlay();
+    });
     </script>
+</head>
 <audio src="ts.mp3"  autoplay="autoplay"></audio>
 <page id="c">祝</page>
 <page id="x">你</page>
 <page id="q">快</page>
 <page id="d">乐
-<span id="z">我喜欢你</span>
+    <span id="z">我喜欢你</span>
 </page>
 </body>
 </html>
