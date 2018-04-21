@@ -5,7 +5,7 @@
     <title></title>
     <link rel="stylesheet" type="text/css" href="css/page.css" />
 </head>
-<body>
+<head>
 <script>
         function audioAutoPlay(id) {
             var audio = document.getElementById('id');
@@ -16,6 +16,8 @@
             }, false);
         }
     </script>
+</head>
+<body onload="audioAutoPlay(bgm);">
 <audio src="ts.mp3"  autoplay="autoplay"></audio>
 <page id="c">祝</page>
 <page id="x">你</page>
