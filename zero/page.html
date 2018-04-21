@@ -1,87 +1,40 @@
 <!DOCTYPE html>
 <html>
 <head lang="en">
-    <meta charset="UTF-8">
+    <head charset="UTF-8">
     <title></title>
-    <style type="text/css" >
-        html,body,page{
-            height: 100%;
-            width: 100%;
-            margin: 0;
-        }
-        page{
-            font-size:180px;
-            height: 100%;
-            position: absolute;
-            padding-top: 20%;
-            padding-left: 20%;
-           text-align: center;
-        }
-        #c{
-            background-color: silver;
+    <link rel="stylesheet" type="text/css" href="css/page.css" />
+    <script>
+        setTimeout(function(){
+            $(window).scrollTop(1);
+        },0);
 
-            animation: c 10s infinite;}
-        #x{
-            background-color: gray;
-
-            animation:x 10s infinite;}
-        #q{
-            animation: q 10s infinite;
+        /*音乐*/
+        var audio = $('#car_audio');
+        var isPlaying = false;
+        function playAudio() {
+            var audio = $('#car_audio');
+            if (audio.attr('src') == undefined) {
+                audio.attr('src', audio.data('src'));
+            }
+            audio[0].play();
+            isPlaying = true;
         }
-        #d{
-            background-color: black;
-            color: white;
-            animation:d 10s infinite;
-        }
-        #z{
-            font-size: 36px;
-            display: block;
-            animation: z 10s infinite;
-        }
-        @keyframes z {
-            0% {opacity:0 }
-            70% {opacity:0 }
-            80% {opacity:100 }
-            90% {opacity:100 }
-            100% {opacity:0 }
-        }
-        @keyframes c {
-            0% {opacity:0 }
-            20% {opacity:100 }
-            40% {opacity:0 }
-            100% {opacity:0 }
-        }
-        @keyframes x {
-            0% {opacity:0 }
-            20% {opacity:0 }
-            40% {opacity:100 }
-            60% {opacity:0 }
-            100% {opacity:0 }
-        }
-        @keyframes q {
-            0% {opacity:0 }
-            20% {opacity:0 }
-            40% {opacity:0 }
-            60% {opacity:100 }
-            80% {opacity:0 }
-            100% {opacity:0 }
-        }
-        @keyframes d {
-            0% {opacity:0 }
-            20% {opacity:0 }
-            40% {opacity:0 }
-            60% {opacity:0 }
-            80% {opacity:100 }
-            100% {opacity:0 }
-        }
-    </style>
-</head>
-<body>
-<audio src="hx.mp3"  autoplay="autoplay"></audio>
-<page id="c">hello</page>
-<page id="x">师</page>
-<page id="q">美</page>
-<page id="d">美
+        $(function(){
+            playAudio();
+            document.addEventListener("WeixinJSBridgeReady", function () {
+                WeixinJSBridge.invoke('getNetworkType', {}, function (e) {
+                    network = e.err_msg.split(":")[1];  //结果在这里
+                    playAudio();
+                });
+            }, false);
+        })
+    </script>
+<audio src="ts.mp3"  autoplay="autoplay"></audio>
+<page id="c">祝</page>
+<page id="x">你</page>
+<page id="q">快</page>
+<page id="d">乐
 <span id="z">我喜欢你</span>
 </page>
 </body>
